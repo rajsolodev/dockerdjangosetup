@@ -43,6 +43,7 @@ services:
       - ".env"
     volumes:
       - .:/dockerdjangosetup
+      - /dockerdjangosetup/.venv 
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     depends_on:
       mysql_db:
